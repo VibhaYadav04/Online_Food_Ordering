@@ -1,0 +1,30 @@
+package com.food.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity // to map java with databse table
+@Data   // for getters and setters
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class User {
+
+	@Id  // primary key
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // generate id one by one
+	private Long id;
+	
+	private String fullName;
+	
+	private String email;
+	
+	private String password;
+	
+	private USER_ROLE role;
+	
+}
