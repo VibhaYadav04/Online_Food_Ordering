@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.food.dto.RestaurantDto;
 
 import jakarta.persistence.CascadeType;
@@ -32,16 +33,17 @@ public class User {
 	
 	private String email;
 	
+	@JsonProperty (access = JsonProperty.Access.WRITE_ONLY) // we have placed it here because we dont want to see the password in frontend
 	private String password;
 	
-	private USER_ROLE role;
+	private USER_ROLE role = USER_ROLE.ROLE_CUSTOMER;
 	
 	@JsonIgnore //we don't want List<Order> when we fetch the user table hence we use this else it will go to Lazy Loading instead of Eager Loading
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy="customer") // OneToMany relationship with Order table, cascade is because if the user get deleted then delete all other data of it
 	                                                                      // mapped by is because customer field will be provided in Order table and it type will be User so don't create a separate table for it
 	private List <Order> orders = new ArrayList<>();
 	
-	@ElementCollection
+	@ElementCollection //create separate table for favourites
 	private List<RestaurantDto> favourites = new ArrayList<>();
 	
 	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)  // one user can have multiple address

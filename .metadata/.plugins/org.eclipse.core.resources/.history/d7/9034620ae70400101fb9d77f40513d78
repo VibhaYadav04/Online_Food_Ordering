@@ -1,0 +1,14 @@
+package com.food.service;
+
+import org.springframework.stereotype.Service;
+
+import com.food.model.Restaurant;
+import com.food.model.User;
+
+@Service 
+public class RestaurantService {
+
+	public Restaurant createRestaurant (CreateRestaurantRequest req, User user) {
+		
+	}
+}

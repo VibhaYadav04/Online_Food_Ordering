@@ -1,0 +1,30 @@
+package com.food.config;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.crypto.SecretKey;
+
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+
+import io.jsonwebtoken.security.Keys;
+
+public class JwtProvider {
+
+	private SecretKey key = Keys.hmacShaKeyFor(JwtConstant.SECRET_KEY.getBytes());
+	
+	public String generateToken (Authentication auth) {
+		
+		Collections<? extends GrantedAuthority> authorities = auth.getAuthorities();
+		String roles = populateAuthorities(authorities);
+		
+		return null;
+	}
+	
+	private String populateAuthorities(Collections authorities) {
+		Set <String> auth = new HashSet<>();
+		return null;
+	}
+}

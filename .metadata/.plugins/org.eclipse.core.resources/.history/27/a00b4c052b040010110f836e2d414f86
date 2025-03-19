@@ -1,0 +1,49 @@
+package com.food.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.food.dto.RestaurantDto;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity // to map java with database table
+@Data   // for getters and setters
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class User {
+
+	@Id  // primary key
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // generate id one by one
+	private Long id;
+	
+	private String fullName;
+	
+	private String email;
+	
+	private String password;
+	
+	private USER_ROLE role;
+	
+	@JsonIgnore //we don't want List<Order> when we fetch the user table hence we use this else it will go to Lazy Loading instead of Eager Loading
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy="customer") // OneToMany relationship with Order table, cascade is because if the user get deleted then delete all other data of it
+	                                                                      // mapped by is because customer field will be provided in Order table and it type will be User so don't create a separate table for it
+	private List <Order> orders = new ArrayList<>();
+	
+	@ElementCollection
+	private List<RestaurantDto> favourites = new ArrayList<>();
+	
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)  // one user can have multiple address
+	private List <Address> adresses = new ArrayList<>();
+}

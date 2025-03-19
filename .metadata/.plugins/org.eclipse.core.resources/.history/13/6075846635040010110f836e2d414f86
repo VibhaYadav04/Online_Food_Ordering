@@ -1,0 +1,5 @@
+package com.food.repository;
+
+public interface UserRepository extends JpaRepository <User, Long> { // Nmae of Enity, Data type of Primay Key
+
+}
