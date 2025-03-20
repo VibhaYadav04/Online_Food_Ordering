@@ -1,0 +1,72 @@
+package com.food.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.food.model.Category;
+import com.food.model.Food;
+import com.food.model.Restaurant;
+import com.food.repository.FoodRepository;
+import com.food.request.CreateFoodRequest;
+
+public class FoodServiceImpl implements FoodService {
+
+	
+	@Autowired
+	private FoodRepository foodRepository;
+	
+	
+	@Override
+	public Food createFood(CreateFoodRequest req, Category category, Restaurant restaurant) {
+		Food food = new Food();
+		food.setFoodCategory(category);
+		food.setRestaurant(restaurant);
+		food.setDescription(req.getDescription());
+		food.setImages(req.getImages());
+		food.setName(req.getNme());
+		food.setPrice(req.getPrice());
+		food.setIngredients(req.getIngredients());
+		food.setSeasonal(req.isSeasonal());
+		food.setVegetarian(req.isVegetarian());
+		
+		Food savedFood = foodRepository.save(food);
+		restaurant.getFood().add(savedFood);
+		
+		return savedFood;
+	}
+
+	@Override
+	public void deleteFood(Long foodId) throws Exception {
+		
+		Food food = findFoodById(foodId);
+		food.setRestaurant(null);
+		foodRepository.save(food);
+	}
+
+	@Override
+	public List<Food> getRestaurantFood(Long restaurantId, boolean isVegetarian, boolean isNonVeg, boolean isSeasonal,
+			String foodCategory) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Food> searchFood(String keyword) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Food findFoodById(Long foodId) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Food updateAvailabilityStatus(Long foodId) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
