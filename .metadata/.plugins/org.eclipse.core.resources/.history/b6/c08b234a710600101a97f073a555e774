@@ -1,0 +1,89 @@
+package com.food.service;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.food.model.Address;
+import com.food.model.Cart;
+import com.food.model.Order;
+import com.food.model.Restaurant;
+import com.food.model.User;
+import com.food.repository.AddressRepository;
+import com.food.repository.OrderItemRepository;
+import com.food.repository.OrderRepository;
+import com.food.repository.UserRepository;
+import com.food.request.OrderRequest;
+
+@Service
+public class OrderServiceImpl implements OrderService{
+
+	@Autowired
+	private OrderRepository orderRepository;
+	
+	@Autowired
+	private OrderItemRepository orderItemRepository;
+	
+	@Autowired
+	private AddressRepository addressRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Autowired
+	private RestaurantService restaurantService;
+	
+	@Autowired
+	private CartService cartService;
+	
+	@Override
+	public Order createOrder(OrderRequest order, User user) {
+		Address shippingAddress = order.getDeliveryAddress();
+		Address savedAddress = addressRepository.save(shippingAddress);
+		
+		if (!user.getAdresses().contains((savedAddress))){
+			user.getAdresses().add(savedAddress);
+			userRepository.save(user);
+		}
+		
+		Restaurant restaurant = restaurantService.findRestaurantById(order.getRestaurantId());
+		
+		Order createdOrder = new Order();
+		createdOrder.setCustomer(user);
+		createdOrder.setCreatedAt(new Date());
+		createdOrder.setOrderStatus("PENDING");
+		createdOrder.setDeliveryAddress(savedAddress);
+		createdOrder.setRestaurant(restaurant);
+		
+		Cart cart = cartService.findCartById(user.getId());
+		
+		return null;
+	}
+
+	@Override
+	public Order updateOrder(Long orderId, String orderStatus) throws Exception {
+		
+		return null;
+	}
+
+	@Override
+	public void cancelOrder(Long orderId) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Order> getUsersOrder(Long userId) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Order> getRestaurantOrder(Long restaurantId, String orderStatus) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

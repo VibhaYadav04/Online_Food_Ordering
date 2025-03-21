@@ -24,15 +24,17 @@ public class IngredientCategory {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long id;
+	Long Id;
+	
+	
 	
 	private String name;
 	
 	@JsonIgnore
 	@ManyToOne
-	private Restaurant restuarant;
+	private Restaurant restaurant;
 	
 	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-	private List<IngredientsItem> ingresdients = new ArrayList<>();
+	private List<IngredientsItem> ingredients = new ArrayList<>();
 	
 }

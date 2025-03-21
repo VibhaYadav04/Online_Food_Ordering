@@ -7,3 +7,7 @@
 1742375131808	Rename package 'com.foodcom.food.service'
 1742463557494	Rename type 'FooService'
 1742465721814	Move compilation unit
+1742495404590	Rename type 'IngredientCategory'
+1742497703479	Rename type 'IngredientsServiceImple'
+1742532157630	Rename type 'AddCartItemRequest'
+1742532183123	Rename type 'AddCarttemRequest'

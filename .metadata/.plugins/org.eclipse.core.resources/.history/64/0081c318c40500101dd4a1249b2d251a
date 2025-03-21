@@ -1,0 +1,5 @@
+package com.food.request;
+
+public class IngredientCategoryRequest {
+
+}

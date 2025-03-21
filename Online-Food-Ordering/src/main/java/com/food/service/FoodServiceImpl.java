@@ -5,6 +5,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.food.model.Category;
 import com.food.model.Food;
@@ -12,6 +13,7 @@ import com.food.model.Restaurant;
 import com.food.repository.FoodRepository;
 import com.food.request.CreateFoodRequest;
 
+@Service
 public class FoodServiceImpl implements FoodService {
 
 	

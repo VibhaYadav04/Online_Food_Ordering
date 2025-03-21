@@ -6,7 +6,7 @@ import com.food.model.Category;
 
 public interface CategoryService {
 
-	public Category createCategory(String name, Long userid);
+	public Category createCategory(String name, Long userid) throws Exception;
 	
 	public List<Category> findCategoryByRestaurantId(Long id) throws Exception;
 	

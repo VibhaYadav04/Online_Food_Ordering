@@ -1,0 +1,10 @@
+package com.food.service;
+
+import com.food.model.CartItem;
+
+public interface CartService {
+
+	public CartItem addItemToCart(AddCartItemReqest req, String jwt) throws Exception;
+	
+	
+}
