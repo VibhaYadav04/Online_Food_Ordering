@@ -1,0 +1,46 @@
+export const topMeals=[
+    {
+        image:"https://cdn.pixabay.com/photo/2024/04/23/09/32/ai-generated-8714508_1280.jpg",
+        title:"Pizza"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2022/08/29/17/44/burger-7419420_1280.jpg",
+        title:"Burger"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2022/05/15/20/42/sandwich-7198982_1280.jpg",
+        title:"Sandwich"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2016/10/25/13/42/indian-1768906_1280.jpg",
+        title:"Dosa"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2019/09/11/09/06/indian-food-4468286_1280.jpg",
+        title:"Pav Bhaji"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2022/02/12/15/05/biryani-7009127_1280.jpg",
+        title:"Biryani"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2022/03/02/12/42/paneer-7043098_1280.jpg",
+        title:"Paneer"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2021/06/05/18/20/cake-6313427_1280.jpg",
+        title:"Cake"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2024/05/21/14/17/cup-8778258_1280.jpg",
+        title:"Ice Cream"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2024/01/23/10/02/thali-8527370_1280.jpg",
+        title:"Thali"
+    },
+    {
+        image:"https://cdn.pixabay.com/photo/2016/03/21/21/33/chana-masala-1271639_1280.jpg",
+        title:"Chole"
+    }
+]
