@@ -1,3 +1,9 @@
 {
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "emmet.preferences": {
+    },
+    "emmet.includeLanguages": {
+        "javascript":"javascriptreact"
+    },
+    "js/ts.implicitProjectConfig.checkJs": true
 }

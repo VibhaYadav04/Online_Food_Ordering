@@ -6,7 +6,7 @@ import RestaurantCard from '../Restaurant/RestaurantCard'
 const restaurant=[1,1,1,1,1,1]
 export const Home = () => {
   return (
-    <div className='pb-10'>
+    <div className='pb-10 '>
         <section className='banner z-50 relative flex flex-col items-center justify-center items-center'>
 
             <div className='w-[50vw] z-10 text-center'>
@@ -15,7 +15,7 @@ export const Home = () => {
                    <p className='z-10 text-greay-300 text-xl lg:text-4xl'> You get the real taste delivered Home</p>
             </div>
             <div className='cover absolute top-0left-0 right-0>'>
-
+             
             </div>
             <div className='fadout'>
 
@@ -34,6 +34,7 @@ export const Home = () => {
                 }
             </div>
         </section>
+        
     </div>
   )
 }

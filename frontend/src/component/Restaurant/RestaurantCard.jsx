@@ -3,7 +3,7 @@ import { Card, Chip, IconButton } from '@mui/material'
 import FavouriteIcon from '@mui/icons-material/Favorite';
 import FavouriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
-export const RestaurantCard = () => {
+export const RestaurantCard = ()=> {
   return (
     <Card className='w-[18 rem]'>
         <div className = {`${true ? 'cursor-pointer':'cursor-not-allowed'} relative`}>
@@ -31,5 +31,4 @@ export const RestaurantCard = () => {
     </Card>
   )
 }
-
 export default RestaurantCard
