@@ -5,25 +5,25 @@ import Slider from "react-slick";
 import { topMeals } from './topMeals';
 import { CarouselItem } from './CarouselItem';
 export const MultiItemCarousel = () => {
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        arrows:false      
-      };
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false
+  };
 
   return (
     <div>
-        <Slider {...settings}>
-            {topMeals.map((item)=>(<CarouselItem 
-            image={item.image} 
-            title={item.title} 
-            key={item.id}/>))}
-        </Slider>
+      <Slider {...settings}>
+        {topMeals.map((item,index) => (<CarouselItem
+          image={item.image}
+          title={item.title}
+          key={item.id || index}  />))}
+      </Slider>
     </div>
   )
 }

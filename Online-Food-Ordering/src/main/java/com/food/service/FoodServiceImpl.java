@@ -1,5 +1,6 @@
 package com.food.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -29,11 +30,12 @@ public class FoodServiceImpl implements FoodService {
 		food.setRestaurant(restaurant);
 		food.setDescription(req.getDescription());
 		food.setImages(req.getImages());
-		food.setName(req.getNme());
+		food.setName(req.getName());
 		food.setPrice(req.getPrice());
 		food.setIngredients(req.getIngredients());
 		food.setSeasonal(req.isSeasonal());
 		food.setVegetarian(req.isVegetarian());
+		food.setCreationDate(new Date());
 		
 		Food savedFood = foodRepository.save(food);
 		restaurant.getFood().add(savedFood);

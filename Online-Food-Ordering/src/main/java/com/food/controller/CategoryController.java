@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -18,7 +19,7 @@ import com.food.service.CategoryService;
 import com.food.service.UserService;
 
 @RestController
-@RequestMapping("/api/admin/category")
+@RequestMapping("/api")
 public class CategoryController {
 
 	@Autowired
@@ -42,12 +43,12 @@ public class CategoryController {
 	
 	
 	// GET CATEGORY BY ID
-	@GetMapping("/category/restaurant")
-	public ResponseEntity<List<Category>> getRestaurantCategory(@RequestHeader("Authorization") String jwt) throws Exception{
+	@GetMapping("/category/restaurant/{id}")
+	public ResponseEntity<List<Category>> getRestaurantCategory(@PathVariable Long id, @RequestHeader("Authorization") String jwt) throws Exception{
 	
 		User user = userService.findUserbyJwtToken(jwt);
 		
-		List<Category> categories = categoryService.findCategoryByRestaurantId(user.getId());
+		List<Category> categories = categoryService.findCategoryByRestaurantId(id);
 		
 		return new ResponseEntity<>(categories, HttpStatus.OK);
 		

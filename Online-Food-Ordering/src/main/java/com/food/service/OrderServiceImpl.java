@@ -70,7 +70,7 @@ public class OrderServiceImpl implements OrderService{
 			orderItem.setFood(cartItem.getFood());
 			orderItem.setIngredients(cartItem.getIngredients());
 			orderItem.setQuantity(cartItem.getQuantity());
-			orderItem.setTotalPtrice(cartItem.getTotalPrice());
+			orderItem.setTotalPrice(cartItem.getTotalPrice());
 			
 			OrderItem savedOrderItem = orderItemRepository.save(orderItem); // saved using order repository
 			orderItems.add(savedOrderItem); // saved in array list

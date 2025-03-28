@@ -1,5 +1,0 @@
-package com.food.request;
-
-public class IngredientRequest {
-
-}

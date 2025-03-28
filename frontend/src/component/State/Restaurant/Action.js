@@ -1,5 +1,23 @@
-import {api} from "../../../config/api";
-import { CREATE_CATEGORY_EVENTS_SUCCESS, CREATE_CATEGORY_FAILURE, CREATE_CATEGORY_REQUEST, CREATE_EVENTS_FAILURE, CREATE_EVENTS_REQUEST, CREATE_EVENTS_SUCCESS, CREATE_RESTAURANT_FAILURE, CREATE_RESTAURANT_REQUEST, CREATE_RESTAURANT_SUCCESS, DELETE_EVENTS_FAILURE, DELETE_EVENTS_REQUEST, DELETE_EVENTS_SUCCESS, DELETE_RESTAURANT_FAILURE, DELETE_RESTAURANT_REQUEST, DELETE_RESTAURANT_SUCCESS, GET_ALL_EVENTS_FAILURE, GET_ALL_EVENTS_REQUEST, GET_ALL_EVENTS_SUCCESS, GET_ALL_RESTAURANT_FAILURE, 
+import {api} from "../../config/api";
+import { CREATE_CATEGORY_SUCCESS, 
+    CREATE_CATEGORY_FAILURE, 
+    CREATE_CATEGORY_REQUEST, 
+    CREATE_EVENTS_FAILURE, 
+    CREATE_EVENTS_REQUEST, 
+    CREATE_EVENTS_SUCCESS, 
+    CREATE_RESTAURANT_FAILURE, 
+    CREATE_RESTAURANT_REQUEST, 
+    CREATE_RESTAURANT_SUCCESS, 
+    DELETE_EVENTS_FAILURE, 
+    DELETE_EVENTS_REQUEST, 
+    DELETE_EVENTS_SUCCESS, 
+    DELETE_RESTAURANT_FAILURE, 
+    DELETE_RESTAURANT_REQUEST, 
+    DELETE_RESTAURANT_SUCCESS, 
+    GET_ALL_EVENTS_FAILURE, 
+    GET_ALL_EVENTS_REQUEST,
+    GET_ALL_EVENTS_SUCCESS,
+    GET_ALL_RESTAURANT_FAILURE, 
     GET_ALL_RESTAURANT_REQUEST, 
     GET_ALL_RESTAURANT_SUCCESS, 
     GET_RESTAURANT_BY_ID_FAILURE, 
@@ -248,7 +266,7 @@ export const createCategoryAction = ({ jwt, reqData }) => {
                 },
             });
             console.log("Create category ", response.data);
-            dispatch({type:CREATE_CATEGORY_EVENTS_SUCCESS, payload:response.data});
+            dispatch({type:CREATE_CATEGORY_SUCCESS, payload:response.data});
         }
         catch (error){
             console.log("catch error ", error);
@@ -257,7 +275,7 @@ export const createCategoryAction = ({ jwt, reqData }) => {
     };
 };
 
-export const getRestaurantCategory = ({jwt, restaurantId}) => {
+export const getRestaurantsCategory = ({jwt, restaurantId}) => {
     return async (dispatch) => {
         dispatch({type:GET_RESTAURANT_CATEGORY_REQUEST});
         try{

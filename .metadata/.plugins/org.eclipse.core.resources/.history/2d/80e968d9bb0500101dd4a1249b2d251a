@@ -1,8 +1,0 @@
-package com.food.service;
-
-public interface IngredientsService {
-
-	public IngredientsService createIngredientCategory (String name, Long restaurantId) throws Exception;
-	
-	
-}

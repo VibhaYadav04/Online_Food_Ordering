@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom'
 import { useSelector } from "react-redux";
 
 export const Navbar = () => {
-  const { auth } = useSelector(store => store)
+  const { auth, cart } = useSelector(store => store)
   const navigate = useNavigate();
 
   const handleAvatarClick=()=>{
@@ -22,9 +22,9 @@ export const Navbar = () => {
   }
 
   return (
-    <Box className="px-5 sticky top-0  z-50 py-[.8rem] bg-[#264d4d] lg:px-20 flex justify-between">
+    <Box className="px-5 sticky top-0  z-50 py-[.8rem] bg-[#D88B1B] lg:px-20 flex justify-between">
       <div className="lg:mr-10 cursor-pointer flex items-center space-x-4">
-        <li onClick={()=>navigate('/')} className="logo font-semibold text-gray-300 text-2xl">
+        <li onClick={()=>navigate('/')} className="logo font-semibold text-white text-2xl font-poppins">
           Taste Hunt
         </li>
       </div>
@@ -35,15 +35,15 @@ export const Navbar = () => {
             <SearchIcon sx={{ fontSize: "1.5rem" }} />
           </IconButton>
         </div>
-        <div className="">
+        <div className="font-medium">
           {auth.user ? 
-            (<Avatar onClick={handleAvatarClick} sx={{ bgcolor: "white", color: blueGrey.A400 }}>
+            (<Avatar onClick={handleAvatarClick} sx={{ bgcolor: "white", color: blueGrey.A900 }}>
             {auth.user?.fullName[0].toUpperCase()}</Avatar>) :
             (<IconButton onClick={() => navigate("account/login")}><PersonIcon /></IconButton>)}
         </div>
         <div className="">
-          <IconButton>
-            <Badge color="primary" badgeContent={3}>
+          <IconButton onClick={()=> navigate("/cart")}>
+            <Badge color="primary" badgeContent={cart.cart?.items.length}>
               <ShoppingCartIcon sx={{ fontSize: "1.5rem" }} />
             </Badge>
           </IconButton>

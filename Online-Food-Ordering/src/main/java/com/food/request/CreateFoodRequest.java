@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 public class CreateFoodRequest {
 
-	private String nme;
+	private String name;
 	private String description;
 	private Long price;
 	
