@@ -6,6 +6,7 @@ import { RestaurantDetails } from '../Restaurant/RestaurantDetails'
 import { Cart } from '../Cart/Cart'
 import { Profile } from '../Profile/Profile'
 import {Auth} from '../Auth/Auth'
+import { OrderSuccess } from '../Profile/OrderSuccess'
 export const CustomerRoute = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ export const CustomerRoute = () => {
            <Route path='/restaurant/:city/:title/:id' element={<RestaurantDetails/>} />
            <Route path='/cart' element={<Cart/>} />
            <Route path='/my-profile/*' element={<Profile/>} />
+           <Route path='/order-success' element={<OrderSuccess/>} />
         </Routes>
         <Auth/>
     </div>

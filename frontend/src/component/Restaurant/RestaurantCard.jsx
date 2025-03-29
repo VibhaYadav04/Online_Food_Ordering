@@ -40,7 +40,7 @@ export const RestaurantCard = ({ item }) => {
             </div>
             <div className='p-4 textPart lg:flex w-full justify-between'>
                 <div className='space-y-1'>
-                    <p onClick={handleNavigateToRestaurant} className='font-semibold text-lg cursor-pointer'>{item.name}</p>
+                    <p onClick={handleNavigateToRestaurant} className='font-semibold text-lg cursor-pointer'>{item.name || item.title}</p>
                     <p className='text-gray-400 text-sm italic'>{item.description}</p>
                 </div>
                 <div>

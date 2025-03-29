@@ -42,6 +42,7 @@ export const RestaurantDetails = () => {
     }
 
     console.log("restaurant by id ", restaurant)
+    
     // functions of restaurant
     useEffect(() => {
         dispatch(getRestaurantById({ jwt, restaurantId: id }))

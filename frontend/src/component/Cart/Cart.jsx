@@ -14,6 +14,7 @@ import AddLocationAltIcon from "@mui/icons-material/AddLocationAlt";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useSelector, useDispatch } from "react-redux";
 import {createOrder} from "../State/Order/Action"
+import { useNavigate } from "react-router-dom";
 
 export const style = {
   position: "absolute",
@@ -26,6 +27,7 @@ export const style = {
   boxShadow: 24,
   p: 4,
 };
+
 
 const initialValue = {
   streetAddress: "",
@@ -47,7 +49,7 @@ export const Cart = () => {
   const { auth, cart } = useSelector(store => store);
   const handleClose = () => setOpen(false);
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
 
   const handleSubmit = (values) => {
     const data = {
@@ -66,6 +68,7 @@ export const Cart = () => {
     }
     dispatch(createOrder(data))
     console.log("Form value", values);
+    navigate("/order-success")
   };
   return (
     <>

@@ -6,6 +6,7 @@ import { Orders } from './Orders'
 import { Address } from './Address'
 import { Favorites } from './Favorites'
 import { Events } from './Events'
+
 import {useState} from 'react'
 
 export const Profile = () => {

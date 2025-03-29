@@ -10,6 +10,7 @@ import { Divider, Drawer, useMediaQuery } from '@mui/material'
 import {useNavigate} from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { logout } from '../State/Authentication/Action'
+import { clearCartAction } from '../State/Cart/Action'
 
 const menu=[
     {title:"Orders", icon:<ShoppingBagIcon/>},
@@ -28,7 +29,9 @@ export const ProfileNavigation = ({open, handleClose}) => {
 
     const handleNavigate=(item)=>{
         if(item.title==='Logout'){
+          dispatch(clearCartAction());
           dispatch(logout());
+          
         navigate("/")
         }
         else
