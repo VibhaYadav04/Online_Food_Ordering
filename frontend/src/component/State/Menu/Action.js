@@ -1,7 +1,7 @@
 import {api} from "../../config/api";
-import { CREATE_MENU_ITEM_FAILURE, CREATE_MENU_ITEM_REQUEST,
+import { CREATE_MENU_ITEM_FAILURE, 
+         CREATE_MENU_ITEM_REQUEST,
          CREATE_MENU_ITEM_SUCCESS,
-         CREATED_MENU_ITEM_SUCCESS,
          DELETE_MENU_ITEM_FAILURE,
          DELETE_MENU_ITEM_REQUEST,
          DELETE_MENU_ITEM_SUCCESS,
@@ -37,20 +37,20 @@ export const createMenuItem = ({menu, jwt})=>{
     };
 };
 
-export const getMenuByRestaurantId = (reqData)=>{
+export const getMenuItemByRestaurantId = (reqData)=>{
     return async (dispatch) => {
         dispatch({type:GET_MENU_ITEMS_BY_RESTAURANT_ID_REQUEST});
         try {
-            const response = await api.get(`/api/food/restaurant/${reqData.restaurantId}?vegetarian=${reqData.vegetarian}&nonveg=${reqData.nonveg}&seasonal=${reqData.seasonal}&food_category=${reqData.foodCategory}`,
+            const {data} = await api.get(`/api/food/restaurant/${reqData.restaurantId}?vegetarian=${reqData.vegetarian}&nonveg=${reqData.nonveg}&seasonal=${reqData.seasonal}&food_category=${reqData.foodCategory}`,
                 {
-                    
                     headers:{
                         Authorization : `Bearer ${reqData.jwt}`,
                     },
                 });
                 
-                console.log("menu item by restaurant ", response.data);
-                dispatch({type:GET_MENU_ITEMS_BY_RESTAURANT_ID_SUCCESS, payload:response.data})
+                
+                console.log("menu item by restaurant ", data);
+                dispatch({type:GET_MENU_ITEMS_BY_RESTAURANT_ID_SUCCESS, payload:data})
         } catch(error){
             console.log("catch error ", error);
             dispatch({type:GET_MENU_ITEMS_BY_RESTAURANT_ID_FAILURE, payload:error})
@@ -98,6 +98,7 @@ export const updateMenuItemAvailability = ({foodId, jwt})=>{
 };
 
 export const deleteFoodAction = ({foodId, jwt})=>{
+    
     return async (dispatch) => {
         dispatch({type:DELETE_MENU_ITEM_REQUEST});
         try {

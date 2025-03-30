@@ -54,7 +54,6 @@ INDEX VERSION 1.134+E:\NucleusTeq Assignments\Java\Online Food Ordering\.metadat
 1054090519.index
 1781168292.index
 3205210022.index
-1280094687.index
 2369719045.index
 3722668739.index
 4002021282.index

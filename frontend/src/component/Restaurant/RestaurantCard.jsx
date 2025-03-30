@@ -34,8 +34,8 @@ export const RestaurantCard = ({ item }) => {
                 <Chip
                     size='small'
                     className='absolute top-2 left-2'
-                    color={item.open ? "success" : "error"}
-                    label={item.open ? "Open" : "Closed"}
+                    color={item.open ? "success" : "success"}
+                    label={item.open ? "Open" : "Open"}
                 />
             </div>
             <div className='p-4 textPart lg:flex w-full justify-between'>

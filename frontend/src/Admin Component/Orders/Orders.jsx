@@ -2,21 +2,21 @@ import React , { useState }from 'react'
 import { Card, FormControl, RadioGroup, Typography, FormControlLabel, Radio} from "@mui/material";
 import OrderTable from './OrderTable'
 
-const orderStatus=[
-    {label:"Pending", value:"PENDING"},
-    {label:"Completed", value:"COMPLETED"},
-    {label:"All", value:"ALL"}
+// const orderStatus=[
+//     {label:"Pending", value:"PENDING"},
+//     {label:"Completed", value:"COMPLETED"},
+//     {label:"All", value:"ALL"}
 
-]
+// ]
 export const Orders = () => {
-    const [filterValue,setFilterValue]=useState();
+    // const [filterValue,setFilterValue]=useState();
 
-    const handleFilter=(e,value)=>{
-    setFilterValue(value);
-    };
+    // const handleFilter=(e,value)=>{
+    // setFilterValue(value);
+    // };
   return (
     <div className='px-2'>
-      <Card className='p-5'>
+      {/* <Card className='p-5'>
      <Typography sx={{paddingBottom:"1rem"}} variant='h5'>
       Order Status
      </Typography>
@@ -34,7 +34,7 @@ export const Orders = () => {
          />)}
         </RadioGroup>
      </FormControl>
-        </Card>
+        </Card> */}
       <OrderTable/>
     </div>
   )

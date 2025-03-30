@@ -74,7 +74,7 @@ export const Cart = () => {
     <>
       <main className="lg:flex justify-center">
         {/* Showing all elemnt in cart which we have selected */}
-        <section className="lg:w-[30%] space-y-6 lg:min-h-screeen pt-10">
+        <section className="lg:w-[30%] space-y-6 min-h-screen pt-10">
           {cart.cartItems.map((item, index) => (
             <CartItem key={index} item={item} />
           ))}
@@ -105,30 +105,30 @@ export const Cart = () => {
         <section className="lg:w-[70%] flex justify-center px-5 pb-10 lg:pb-0">
           <div>
             <h1 className="text-center font-semibold text-2xl py-10">
-              Choose Delivery Address
+             Delivery Address
             </h1>
             <div className="flex  gap-5 flex-wrap justify-center">
-              {[1, 1, 1, 1].map((item, index) => (
+              {/* {[1].map((item, index) => (
                 <AddressCard
                   key={index}
                   handleSelectAddress={createOrderUsingSelectedAddress}
                   item={item}
                   showButton={true}
                 />
-              ))}
+              ))} */}
 
               <Card className="flex gap-5 w-64 p-5">
                 <AddLocationAltIcon />
                 <div className="space-y-3 text-gray-500">
                   <h1 className="font-semibold text-lg text-white">
-                    Add New Address
+                    Enter Address
                   </h1>
                   <Button
                     variant="outlined"
                     fullWidth
                     onClick={handleOpenAddressModal}
                   >
-                    Add
+                    Click
                   </Button>
                 </div>
               </Card>

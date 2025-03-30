@@ -10,7 +10,7 @@ import {
 const initialState = {
     loading: false,
     error: null,
-    orders: []
+    orders: [],
 };
 
 const restaurantsOrderReducer = (state = initialState, action) => {

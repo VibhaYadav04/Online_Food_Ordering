@@ -1,6 +1,6 @@
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import { Avatar, Badge, Box, IconButton } from "@mui/material";
+import { Avatar, Badge, Box, IconButton, Button } from "@mui/material";
 import { blueGrey } from "@mui/material/colors";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from '@mui/icons-material/Person'
@@ -17,7 +17,7 @@ export const Navbar = () => {
       navigate("/my-profile")
     }
     else{
-      navigate("/admin/restaurant")
+      navigate("/admin/restaurants/details")
     }
   }
 
@@ -30,16 +30,11 @@ export const Navbar = () => {
       </div>
 
       <div className="flex items-center space-x-2 lg:space-x-10">
-        <div className="">
-          <IconButton>
-            <SearchIcon sx={{ fontSize: "1.5rem" }} />
-          </IconButton>
-        </div>
         <div className="font-medium">
           {auth.user ? 
             (<Avatar onClick={handleAvatarClick} sx={{ bgcolor: "white", color: blueGrey.A900 }}>
             {auth.user?.fullName[0].toUpperCase()}</Avatar>) :
-            (<IconButton onClick={() => navigate("account/login")}><PersonIcon /></IconButton>)}
+            (<Button sx={{ bgcolor: "white" }} onClick={() => navigate("account/login")}>Login</Button>)}
         </div>
         <div className="">
           <IconButton onClick={()=> navigate("/cart")}>

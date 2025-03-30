@@ -6,5 +6,6 @@
         "javascript":"javascriptreact"
     },
     "js/ts.implicitProjectConfig.checkJs": true,
-    "javascript.validate.enable": false
+    "javascript.validate.enable": false,
+    "java.compile.nullAnalysis.mode": "disabled"
 }

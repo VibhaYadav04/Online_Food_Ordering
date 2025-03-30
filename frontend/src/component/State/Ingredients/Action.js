@@ -64,7 +64,7 @@ export const createIngredientCategory = ({data,jwt}) => {
               });
               console.log("create ingredients category", response.data);
               dispatch({
-                tyep: CREATE_INGREDIENT_CATEGORY_SUCCESS,
+                type: CREATE_INGREDIENT_CATEGORY_SUCCESS,
                 payload: response.data,
               });
         }catch(error){
@@ -76,7 +76,7 @@ export const createIngredientCategory = ({data,jwt}) => {
 export const getIngredientCategory = ({id,jwt}) => {
     return async (dispatch) => {
         try{
-            const response = awiat api.get(`/api/admin/ingredients/restaurant/${id}/category`,
+            const response = await api.get(`/api/admin/ingredients/restaurant/${id}/category`,
                 {
                     headers:{
                         Authorization : `Bearer ${jwt}`,
@@ -98,7 +98,7 @@ export const updateStockOfIngredient = ({id,jwt}) => {
     return async(dispatch) => {
         try{
             
-            const{data}=await api.put(`/api/admin/ingredient/${id}/stock`,{},
+            const{data}=await api.put(`/api/admin/ingredients/${id}/stock`,{},
                 {
                     headers:{
                         Authorization:`Bearer ${jwt}`,

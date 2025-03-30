@@ -79,6 +79,8 @@ export const getRestaurantById = (reqData) => {
 };
 
 export const getRestaurantByUserId = (jwt) => {
+    console.log("jwt token", jwt);
+    
     return async (dispatch) => {
         dispatch({type:GET_RESTAURANT_BY_USER_ID_REQUEST});
         try{
@@ -162,7 +164,7 @@ export const updateRestaurantStatus = ({restaurantId, jwt}) => {
     return async (dispatch) => {
         dispatch({type:UPDATE_RESTAURANT_STATUS_REQUEST});
         try{
-            const response = await api.PUT(`/api/admin/restaurants/${restaurantId}/status`,{},{
+            const response = await api.put(`/api/admin/restaurants/${restaurantId}/status`,{},{
                 headers:{
                     Authorization: `Bearer ${jwt}`,
                 },

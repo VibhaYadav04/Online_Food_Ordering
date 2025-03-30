@@ -6,7 +6,7 @@ import { MenuCard } from './MenuCard';
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getRestaurantById, getRestaurantsCategory } from '../State/Restaurant/Action'
-import { getMenuByRestaurantId } from '../State/Menu/Action'
+import { getMenuItemByRestaurantId } from '../State/Menu/Action'
 
 const foodTypes = [
     { label: "All", value: "All" },
@@ -51,7 +51,7 @@ export const RestaurantDetails = () => {
 
     // getting all menu of any particular restaurant
     useEffect(() => {
-        dispatch(getMenuByRestaurantId({
+        dispatch(getMenuItemByRestaurantId({
             jwt, restaurantId: id,
             vegetarian: foodType==="vegetarian",
             nonveg: foodType==="non_vegetarian",
@@ -97,7 +97,7 @@ export const RestaurantDetails = () => {
                 <div className="space-y-10 lg:w-[20%] filter">
                     <div className="box space-y-5 lg:sticky top-28">
                         {/* Food Category Filter */}
-                        {/* <div>
+                        <div>
                             <Typography variant='h5' sx={{ paddingBottom: "1rem" }}>
                                 Food Type
                             </Typography>
@@ -114,12 +114,12 @@ export const RestaurantDetails = () => {
                                     ))}
                                 </RadioGroup>
                             </FormControl>
-                        </div> */}
+                        </div>
 
-                        {/* <Divider /> */}
+                        <Divider />
 
                         {/* Food Category Filter */}
-                        {/* <div>
+                        <div>
                             <Typography variant='h5' sx={{ paddingBottom: "1rem" }}>
                                 Food Categories
                             </Typography>
@@ -139,7 +139,7 @@ export const RestaurantDetails = () => {
                                     ))}
                                 </RadioGroup>
                             </FormControl>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
 

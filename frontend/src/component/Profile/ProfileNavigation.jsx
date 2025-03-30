@@ -15,9 +15,9 @@ import { clearCartAction } from '../State/Cart/Action'
 const menu=[
     {title:"Orders", icon:<ShoppingBagIcon/>},
     {title:"Favorites", icon:<FavoriteIcon/>},
-    {title:"Address", icon:<HomeIcon/>},
-    {title:"Payment", icon:<AccountBalanceWalletIcon/>},
-    {title:"Notifications", icon:<NotificationsActiveIcon/>},
+   // {title:"Address", icon:<HomeIcon/>},
+   // {title:"Payment", icon:<AccountBalanceWalletIcon/>},
+   // {title:"Notifications", icon:<NotificationsActiveIcon/>},
     {title:"Events", icon:<EventIcon/>},
     {title:"Logout", icon:<LogoutIcon/>},
 

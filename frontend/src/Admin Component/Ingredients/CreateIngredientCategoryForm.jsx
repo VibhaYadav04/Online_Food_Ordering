@@ -1,14 +1,24 @@
 import React, {useState} from 'react'
-import { TextField, Button } from '@mui/material'
+import { TextField, Button, Modal } from '@mui/material'
+import {createIngredientCategory} from '../../component/State/Ingredients/Action'
+import {useDispatch, useSelector} from 'react-redux'
 
-export const CreateIngredientCategoryForm = () => {
+export const CreateIngredientCategoryForm = ({handleClose}) => {
+
+    const dispatch= useDispatch();
+    const jwt= localStorage.getItem("jwt")
+    const {restaurant} = useSelector(store=>store)
     const [formData, setFormData] = useState({
         name:"", 
     });
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const data = {name:formData.name, restaurantId:restaurant.usersRestaurant.id}
         console.log(formData)
+        dispatch(createIngredientCategory({data, jwt}))
+        handleClose()
     }
-    const handleInputChange =()=>{
+    const handleInputChange =(e)=>{
         const {name, value}=e.target
         setFormData({
             ...formData,[name]:value
@@ -19,7 +29,7 @@ export const CreateIngredientCategoryForm = () => {
         <div className=''>
             <div className='p-5'>
                 <h1 className='text-gray-400 text-center text-xl pb-10'>Create Ingredient Category</h1>
-                    <form onSubmit={handleSubmit}>
+                    <form className='space-y-4' onSubmit={handleSubmit}>
                         <TextField
                             fullWidth
                             id='name'
@@ -31,7 +41,7 @@ export const CreateIngredientCategoryForm = () => {
                         >
                         </TextField>
                         <Button variant='contained' type='submit'>
-                            Create Ingredient
+                            Create Ingredient Category
                         </Button>
                     </form>
             </div>

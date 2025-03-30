@@ -11,7 +11,8 @@ export const Home = () => {
     const jwt = localStorage.getItem("jwt")
 
     // get all restaurants on home page
-    const { restaurant } = useSelector(store => store)
+    const {restaurant}  = useSelector(store => store)
+
     useEffect(() => {
         dispatch(getAllRestaurantsAction(jwt))
     }, [])

@@ -37,7 +37,7 @@ const menuItemReducer = (state = initialState, action) => {
                 return{
                     ...state,
                     loading: false,
-                    mnuItems: state.menuItems.filter(
+                    menuItems: state.menuItems.filter(
                         (menuItem) => menuItem.id !== action.payload
                     ),
                 };

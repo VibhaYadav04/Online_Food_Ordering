@@ -58,6 +58,6 @@
     <fullyQualifiedTypeName name="jakarta.persistence.Table"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
     <fullyQualifiedTypeName name="com.fasterxml.jackson.annotation.JsonIgnore"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.FetchType"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.FetchType"/>
 </qualifiedTypeNameHistroy>

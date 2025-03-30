@@ -9,7 +9,7 @@ const Ingredients = () => {
         <Grid item xs={12} lg={8}>
             <IngredientTable/>
         </Grid>
-        <Grid item xs={12} lg={8}>
+        <Grid item xs={12} lg={4}>
             <IngredientCategoryTable/>
         </Grid>
       </Grid>
