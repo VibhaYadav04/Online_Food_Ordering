@@ -97,7 +97,7 @@ export const RestaurantDetails = () => {
                 <div className="space-y-10 lg:w-[20%] filter">
                     <div className="box space-y-5 lg:sticky top-28">
                         {/* Food Category Filter */}
-                        <div>
+                        {/* <div>
                             <Typography variant='h5' sx={{ paddingBottom: "1rem" }}>
                                 Food Type
                             </Typography>
@@ -114,12 +114,12 @@ export const RestaurantDetails = () => {
                                     ))}
                                 </RadioGroup>
                             </FormControl>
-                        </div>
+                        </div> */}
 
                         <Divider />
 
                         {/* Food Category Filter */}
-                        <div>
+                        {/* <div>
                             <Typography variant='h5' sx={{ paddingBottom: "1rem" }}>
                                 Food Categories
                             </Typography>
@@ -139,7 +139,7 @@ export const RestaurantDetails = () => {
                                     ))}
                                 </RadioGroup>
                             </FormControl>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
