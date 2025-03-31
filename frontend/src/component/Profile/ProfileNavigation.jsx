@@ -18,7 +18,7 @@ const menu=[
    // {title:"Address", icon:<HomeIcon/>},
    // {title:"Payment", icon:<AccountBalanceWalletIcon/>},
    // {title:"Notifications", icon:<NotificationsActiveIcon/>},
-    {title:"Events", icon:<EventIcon/>},
+  //  {title:"Events", icon:<EventIcon/>},
     {title:"Logout", icon:<LogoutIcon/>},
 
 ]
