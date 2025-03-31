@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import CreateIcon from '@mui/icons-material/Create';
+import AddIcon from '@mui/icons-material/Add';
 import { Delete } from '@mui/icons-material'
 import {
   Box, Card, CardHeader, Paper, Table, TableBody, TableCell, TableContainer,
@@ -12,7 +12,7 @@ import { deleteFoodAction, getMenuItemByRestaurantId } from '../../component/Sta
 export default function MenuTable() {
   const dispatch = useDispatch();
   const jwt = localStorage.getItem("jwt")
-  const { restaurant,  menu } = useSelector(store => store)
+  const { restaurant, menu } = useSelector(store => store)
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -26,8 +26,8 @@ export default function MenuTable() {
     }))
   }, []);
 
-  const handleDeleteFood=(foodId)=>{
-     dispatch(deleteFoodAction({foodId, jwt}))
+  const handleDeleteFood = (foodId) => {
+    dispatch(deleteFoodAction({ foodId, jwt }))
   }
   return (
     <Box>
@@ -35,7 +35,7 @@ export default function MenuTable() {
         <CardHeader
           action={
             <IconButton onClick={() => navigate('/admin/restaurants/add-menu')} aria-label="settings">
-              <CreateIcon />
+              <AddIcon />
             </IconButton>
           }
           title={"Menu"}
@@ -73,9 +73,9 @@ export default function MenuTable() {
                   <TableCell align="right"> ₹{item.price}</TableCell>
                   <TableCell align="right">{item.available ? "in_stock" : "out_of_stock"}</TableCell>
                   <TableCell align="right"><IconButton color='primary' onClick={() => handleDeleteFood(item.id)}>
-  <Delete />
-</IconButton>
-</TableCell>
+                    <Delete />
+                  </IconButton>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
