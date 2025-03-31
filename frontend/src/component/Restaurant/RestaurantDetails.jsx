@@ -116,7 +116,7 @@ export const RestaurantDetails = () => {
                             </FormControl>
                         </div> */}
 
-                        <Divider />
+                        {/* <Divider /> */}
 
                         {/* Food Category Filter */}
                         {/* <div>
